@@ -21,7 +21,7 @@ class MyAppHome extends StatefulWidget {
 
 class _MyAppHomeState extends State<MyAppHome>
     with SingleTickerProviderStateMixin {
-  int _current = 1;
+  int _current = 0;
 
   @override
   void initState() {
