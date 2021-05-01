@@ -6,7 +6,11 @@
 
 在debug模式下第一次切换页面可能会有卡顿现象，在release模式下是正常的，已经经过了测试。
 
-# 使用 
+# 使用
+
+`preload` 可以对部分页面进行预加载。注意即使preload为false也会预加载初始化时的index索引页面。
+
+如果你不喜欢当前使用方式觉得与正常的IndexStack使用方式不同，或者您的页面完全不需要预加载，包裹了IndexStackChild觉得麻烦，可以使用`0.1.1`版本，此版本使用方式与IndexStack完全相同，除了没有预加载功能，与当前版本功能也完全相同。
 
 ``` dart
 int _current = 0;
@@ -14,15 +18,20 @@ int _current = 0;
 ProsteIndexedStack(
   index: _current,
   children: [
-    Page1(),
-    Page2(),
-    Page3(),
-    Page4(),
+    ProsteIndexedStack(
+        index: _current,
+        children: [
+          IndexStackChild(child: HomePage()),
+          IndexStackChild(child: Page2()),
+          IndexStackChild(child: Page3(), preload: true),
+          IndexStackChild(child: Page4()),
+        ],
+      )
     ...
   ],
 );
 ```
-
+如果您有什么建议或者使用中出现问题，欢迎到<a href="https://github.com/xyhxx/proste_indexed_stack/issues">issues</a>中发布，我会定期查看并回复。
 
 ```
 

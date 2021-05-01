@@ -9,3 +9,7 @@
 ## [0.1.1]
 
 * supplement readme
+
+##  [0.2.0]
+
+* add preload

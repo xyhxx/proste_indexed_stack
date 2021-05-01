@@ -19,8 +19,7 @@ class MyAppHome extends StatefulWidget {
   _MyAppHomeState createState() => _MyAppHomeState();
 }
 
-class _MyAppHomeState extends State<MyAppHome>
-    with SingleTickerProviderStateMixin {
+class _MyAppHomeState extends State<MyAppHome> with SingleTickerProviderStateMixin {
   int _current = 0;
 
   @override
@@ -35,10 +34,10 @@ class _MyAppHomeState extends State<MyAppHome>
       body: ProsteIndexedStack(
         index: _current,
         children: [
-          HomePage(),
-          MyPage(),
-          Demo(),
-          Demo2(),
+          IndexStackChild(child: HomePage()),
+          IndexStackChild(child: MyPage()),
+          IndexStackChild(child: Demo(), preload: true),
+          IndexStackChild(child: Demo2()),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -60,7 +59,18 @@ class _MyAppHomeState extends State<MyAppHome>
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    print('home init');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -108,6 +118,7 @@ class _DemoState extends State<Demo> {
 class Demo2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print('demo2 build');
     return Center(
       child: Text('Demo2'),
     );
