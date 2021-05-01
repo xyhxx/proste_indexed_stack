@@ -10,7 +10,7 @@
 
 `preload` 可以对部分页面进行预加载。注意即使preload为false也会预加载初始化时的index索引页面。
 
-如果你不喜欢当前使用方式觉得与正常的IndexStack使用方式不同，或者您的页面完全不需要预加载，包裹了IndexStackChild觉得麻烦，可以使用`0.1.1`版本，此版本使用方式与IndexStack完全相同，除了没有预加载功能，与当前版本功能也完全相同。
+如果你不喜欢当前使用方式觉得与正常的IndexedStack使用方式不同，或者您的页面完全不需要预加载，包裹了IndexStackChild觉得麻烦，可以使用`0.1.1`版本，此版本使用方式与IndexedStack完全相同，除了没有预加载功能，与当前版本功能也完全相同。
 
 ``` dart
 int _current = 0;

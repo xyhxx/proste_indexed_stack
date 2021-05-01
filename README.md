@@ -12,7 +12,7 @@ In debug mode, there may be delay when switching pages for the first time, which
 
 `preload` Some pages can be preloaded. Note that even if preload is false, the index page at initialization will be preloaded.
 
-If you don't like the current way of using indexstack and think it's different from the normal way of using indexstack, or your page doesn't need to be preloaded at all, and it's troublesome to package indexstack child, you can use version `0.1.1`. This version's way of using indexstack is exactly the same as that of the current version, except that it doesn't have preloading function.
+If you don't like the current way of using IndexedStack and think it's different from the normal way of using IndexedStack, or your page doesn't need to be preloaded at all, and it's troublesome to wrap IndexStackChild, you can use version `0.1.1`. This version's way of using IndexedStack is exactly the same as that of the current version, except that there is no preloading function.
 
 ``` dart
 int _current = 0;
