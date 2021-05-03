@@ -12,7 +12,7 @@ In debug mode, there may be delay when switching pages for the first time, which
 
 `preload` Some pages can be preloaded. Note that even if preload is false, the index page at initialization will be preloaded.
 
-If you don't like the current way of using IndexedStack and think it's different from the normal way of using IndexedStack, or your page doesn't need to be preloaded at all, and it's troublesome to wrap IndexStackChild, you can use version `0.1.1`. This version's way of using IndexedStack is exactly the same as that of the current version, except that there is no preloading function.
+If you don't like the current way of using IndexedStack and think it's different from the normal way of using IndexedStack, or your page doesn't need to be preloaded at all, and it's troublesome to wrap IndexedStackChild, you can use version `0.1.1`. This version's way of using IndexedStack is exactly the same as that of the current version, except that there is no preloading function.
 
 ``` dart
 int _current = 0;
@@ -23,10 +23,10 @@ ProsteIndexedStack(
     ProsteIndexedStack(
         index: _current,
         children: [
-          IndexStackChild(child: HomePage()),
-          IndexStackChild(child: Page2()),
-          IndexStackChild(child: Page3(), preload: true),
-          IndexStackChild(child: Page4()),
+          IndexedStackChild(child: HomePage()),
+          IndexedStackChild(child: Page2()),
+          IndexedStackChild(child: Page3(), preload: true),
+          IndexedStackChild(child: Page4()),
         ],
       )
     ...

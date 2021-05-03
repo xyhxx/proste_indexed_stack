@@ -3,14 +3,14 @@ library proste_indexed_stack;
 import 'package:flutter/material.dart';
 
 /// stack包裹组件
-class IndexStackChild {
+class IndexedStackChild {
   /// 是否进行预加载 index索引的元素即使为false也会加载
   final bool preload;
 
   /// 组件元素
   final Widget child;
 
-  IndexStackChild({this.preload = false, required this.child});
+  IndexedStackChild({this.preload = false, required this.child});
 }
 
 /// 懒加载IndexedStack组件
@@ -25,7 +25,7 @@ class ProsteIndexedStack extends StatefulWidget {
   final TextDirection? textDirection;
 
   /// 要进行加载的子元素
-  final List<IndexStackChild> children;
+  final List<IndexedStackChild> children;
 
   /// 如何定义子元素的大小
   final StackFit sizing;
@@ -36,7 +36,7 @@ class ProsteIndexedStack extends StatefulWidget {
     this.textDirection,
     this.sizing = StackFit.loose,
     this.index = 0,
-    this.children = const <IndexStackChild>[],
+    this.children = const <IndexedStackChild>[],
   }) : super(key: key);
 
   @override
@@ -55,12 +55,9 @@ class _ProsteLazyIndexedStackState extends State<ProsteIndexedStack> {
     super.initState();
     _widgets = List.generate(
       widget.children.length,
-      (index) => index == widget.index || widget.children[index].preload
-          ? widget.children[index].child
-          : SizedBox.shrink(),
+      (index) => index == widget.index || widget.children[index].preload ? widget.children[index].child : SizedBox.shrink(),
     );
-    _widgetState = List.generate(widget.children.length,
-        (index) => index == widget.index || widget.children[index].preload);
+    _widgetState = List.generate(widget.children.length, (index) => index == widget.index || widget.children[index].preload);
   }
 
   @override

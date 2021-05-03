@@ -10,7 +10,7 @@
 
 `preload` 可以对部分页面进行预加载。注意即使preload为false也会预加载初始化时的index索引页面。
 
-如果你不喜欢当前使用方式觉得与正常的IndexedStack使用方式不同，或者您的页面完全不需要预加载，包裹了IndexStackChild觉得麻烦，可以使用`0.1.1`版本，此版本使用方式与IndexedStack完全相同，除了没有预加载功能，与当前版本功能也完全相同。
+如果你不喜欢当前使用方式觉得与正常的IndexedStack使用方式不同，或者您的页面完全不需要预加载，包裹了IndexedStackChild觉得麻烦，可以使用`0.1.1`版本，此版本使用方式与IndexedStack完全相同，除了没有预加载功能，与当前版本功能也完全相同。
 
 ``` dart
 int _current = 0;
@@ -21,10 +21,10 @@ ProsteIndexedStack(
     ProsteIndexedStack(
         index: _current,
         children: [
-          IndexStackChild(child: HomePage()),
-          IndexStackChild(child: Page2()),
-          IndexStackChild(child: Page3(), preload: true),
-          IndexStackChild(child: Page4()),
+          IndexedStackChild(child: HomePage()),
+          IndexedStackChild(child: Page2()),
+          IndexedStackChild(child: Page3(), preload: true),
+          IndexedStackChild(child: Page4()),
         ],
       )
     ...

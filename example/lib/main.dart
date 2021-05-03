@@ -19,8 +19,7 @@ class MyAppHome extends StatefulWidget {
   _MyAppHomeState createState() => _MyAppHomeState();
 }
 
-class _MyAppHomeState extends State<MyAppHome>
-    with SingleTickerProviderStateMixin {
+class _MyAppHomeState extends State<MyAppHome> with SingleTickerProviderStateMixin {
   int _current = 0;
 
   @override
@@ -35,10 +34,10 @@ class _MyAppHomeState extends State<MyAppHome>
       body: ProsteIndexedStack(
         index: _current,
         children: [
-          IndexStackChild(child: HomePage()),
-          IndexStackChild(child: MyPage()),
-          IndexStackChild(child: Demo(), preload: true),
-          IndexStackChild(child: Demo2()),
+          IndexedStackChild(child: HomePage()),
+          IndexedStackChild(child: MyPage()),
+          IndexedStackChild(child: Demo(), preload: true),
+          IndexedStackChild(child: Demo2()),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

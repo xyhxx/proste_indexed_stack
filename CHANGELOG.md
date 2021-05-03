@@ -13,3 +13,7 @@
 ##  [0.2.0]
 
 * add preload
+
+## [0.2.1]
+
+* IndexStackChild => IndexedStackChild
