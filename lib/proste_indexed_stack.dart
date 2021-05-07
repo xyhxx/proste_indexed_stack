@@ -55,9 +55,12 @@ class _ProsteLazyIndexedStackState extends State<ProsteIndexedStack> {
     super.initState();
     _widgets = List.generate(
       widget.children.length,
-      (index) => index == widget.index || widget.children[index].preload ? widget.children[index].child : SizedBox.shrink(),
+      (index) => index == widget.index || widget.children[index].preload
+          ? widget.children[index].child
+          : SizedBox.shrink(),
     );
-    _widgetState = List.generate(widget.children.length, (index) => index == widget.index || widget.children[index].preload);
+    _widgetState = List.generate(widget.children.length,
+        (index) => index == widget.index || widget.children[index].preload);
   }
 
   @override

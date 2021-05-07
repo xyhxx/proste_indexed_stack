@@ -17,3 +17,7 @@
 ## [0.2.1]
 
 * IndexStackChild => IndexedStackChild
+
+## [0.2.2]
+
+* format code
