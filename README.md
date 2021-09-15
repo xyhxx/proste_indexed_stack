@@ -22,18 +22,12 @@ int _current = 0;
 ProsteIndexedStack(
   index: _current,
   children: [
-    ProsteIndexedStack(
-        index: _current,
-        children: [
-          IndexedStackChild(child: HomePage()),
-          IndexedStackChild(child: Page2()),
-          IndexedStackChild(child: Page3(), preload: true),
-          IndexedStackChild(child: Page4()),
-        ],
-      )
-    ...
+    IndexedStackChild(child: HomePage()),
+    IndexedStackChild(child: Page2()),
+    IndexedStackChild(child: Page3(), preload: true),
+    IndexedStackChild(child: Page4()),
   ],
-);
+)
 ```
 
 If you have any suggestions or problems in used, welcome to<a href="https://github.com/xyhxx/proste_indexed_stack/issues">issues</a>,I will check and reply regularly.

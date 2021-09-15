@@ -1,4 +1,8 @@
 
+## [0.2.4]
+
+* fix https://github.com/xyhxx/proste_indexed_stack/issues/2
+
 ## [0.2.3]
 
 * add logo
